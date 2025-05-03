@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Haikarta.ai - Fully Autonomous AI-Based Bug Bounty Platform</title>
+    <meta name="description" content="The world's first fully autonomous AI-based Bug Bounty Hunting platform. Detects vulnerabilities, generates PoC, and drafts detailed security reports — all without human involvement.">
+    <meta name="keywords" content="AI, bug bounty, cybersecurity, vulnerability detection, autonomous security, Haikarta">
+    <meta name="author" content="Haikarta.ai">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Haikarta.ai - Fully Autonomous Bug Bounty Hunting">
+    <meta property="og:description" content="AI that detects, proves, and reports vulnerabilities. No humans involved.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://haikarta.ai">
+    
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-logo">
+                <img src="assets/logo.png" alt="Haikarta.ai Logo" class="logo">
+                <span class="logo-text">Haikarta.ai</span>
+            </div>
+            <div class="navbar-toggle" id="navbar-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="#about" class="glitch-hover">About</a></li>
+                <li><a href="#features" class="glitch-hover">Features</a></li>
+                <li><a href="#contact" class="glitch-hover">Contact</a></li>
+                <li><a href="#" class="btn-primary">Get Early Access</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="typewriter">Haikarta.ai – The Future of Fully Autonomous Bug Hunting</h1>
+                <p class="hero-subtitle">AI that detects, proves, and reports vulnerabilities. No humans involved.</p>
+                <div class="cta-buttons">
+                    <a href="https://forms.google.com" target="_blank" class="btn-primary btn-glow">Get Early Access</a>
+                    <a href="#features" class="btn-secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="counter-vulnerabilities">0</span>
+                        <span class="stat-label">Vulnerabilities Found</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="counter-users">0</span>
+                        <span class="stat-label">Beta Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100<span class="percent">%</span></span>
+                        <span class="stat-label">AI-Powered</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-animation">
+                    <pre><code>
+// Haikarta.ai Core Logic
+async function scanVulnerabilities(target) {
+  const vulnerabilities = await AI.detectVulnerabilities(target);
+  const reports = [];
+  
+  for (const vuln of vulnerabilities) {
+    const poc = await AI.generateProofOfConcept(vuln);
+    const risk = AI.assessRiskLevel(vuln);
+    const fix = AI.suggestFix(vuln);
+    
+    reports.push({
+      type: vuln.type,
+      severity: risk,
+      proof: poc,
+      remediation: fix,
+      timestamp: Date.now()
+    });
+  }
+  
+  return AI.formatSecurityReport(reports);
+}
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon" id="about">
+        <div class="container">
+            <h2 class="section-title glitch-text" data-text="Coming Soon...">Coming Soon...</h2>
+            <div class="coming-soon-content">
+                <p>Launching the first fully autonomous bug bounty platform. Built for scale. Powered by AI. Designed for Bharat.</p>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Fully AI-operated</h3>
+                    <p>Complete autonomy with zero human intervention. Our AI handles everything from scanning to reporting.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Autonomous Scanning</h3>
+                    <p>Detects XSS, SQLi, CSRF, IDOR, and other vulnerabilities automatically across your applications.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Auto-report Generation</h3>
+                    <p>Creates detailed security reports with proof-of-concept, risk assessment, and suggested fixes.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Self-learning AI</h3>
+                    <p>Continuously improves by training on public bug bounty reports and latest security research.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Secure Cloud Storage</h3>
+                    <p>All vulnerability findings are securely logged and stored in encrypted cloud storage.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Free Beta Access</h3>
+                    <p>Free for the first 10,000 users during our Beta phase. Sign up now to secure your spot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>haikarta.ai@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://instagram.com/haikarta.ai" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://threads.net/@haikarta.ai" target="_blank" class="social-link">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                        <a href="https://twitter.com/HackerHook0176" target="_blank" class="social-link">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Haikarta.ai Logo" class="logo">
+                    <p>© 2025 Haikarta.ai – 100% AI. 0% Human.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>Made with <span class="heart">❤</span> by AI for Bharat</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Inline JavaScript for Animations -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            document.getElementById('navbar-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (this.getAttribute('href') !== '#') {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navbar-menu').classList.remove('active');
+                    document.getElementById('navbar-toggle').classList.remove('active');
+                }
+            });
+        });
+
+        // Countdown Timer (3 months from now)
+        function updateCountdown() {
+            const launchDate = new Date();
+            launchDate.setMonth(launchDate.getMonth() + 3);
+            
+            const now = new Date();
+            const difference = launchDate - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Counter Animation
+        function animateCounter(id, target, duration) {
+            const element = document.getElementById(id);
+            let start = 0;
+            const increment = Math.ceil(target / (duration / 16));
+            
+            const timer = setInterval(() => {
+                start += increment;
+                if (start > target) {
+                    start = target;
+                    clearInterval(timer);
+                }
+                element.textContent = start.toLocaleString();
+            }, 16);
+        }
+
+        // Start counter animation when the element is in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('counter-vulnerabilities', 15782, 2000);
+                    animateCounter('counter-users', 8457, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.hero-stats'));
+
+        // Form submission (prevent default behavior)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

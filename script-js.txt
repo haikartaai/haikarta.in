@@ -1,0 +1,158 @@
+// Wait for DOM to fully load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize animations and interactions
+    initializeAnimations();
+    setupNavigation();
+    setupCountdown();
+    setupScrollEffects();
+    setupForm();
+});
+
+// Initialize animations
+function initializeAnimations() {
+    // Animate the glitch text
+    const glitchElements = document.querySelectorAll('.glitch-hover');
+    glitchElements.forEach(element => {
+        element.setAttribute('data-text', element.textContent);
+    });
+
+    // Add data attributes to glitch text elements
+    const glitchTexts = document.querySelectorAll('.glitch-text');
+    glitchTexts.forEach(element => {
+        const text = element.textContent;
+        element.setAttribute('data-text', text);
+    });
+}
+
+// Setup responsive navigation
+function setupNavigation() {
+    const navToggle = document.getElementById('navbar-toggle');
+    const navMenu = document.getElementById('navbar-menu');
+    
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function() {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.navbar-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Change navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(7, 7, 17, 0.95)';
+            navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.background = 'rgba(7, 7, 17, 0.8)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+}
+
+// Setup countdown timer
+function setupCountdown() {
+    // Set the launch date (3 months from now)
+    const launchDate = new Date();
+    launchDate.setMonth(launchDate.getMonth() + 3);
+    
+    // Update countdown every second
+    function updateCountdown() {
+        const now = new Date();
+        const difference = launchDate - now;
+        
+        // Calculate time units
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        // Update countdown display
+        document.getElementById('days').innerText = days.toString().padStart(2, '0');
+        document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+    }
+    
+    // Initial call and set interval
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+// Setup scroll effects and animations
+function setupScrollEffects() {
+    // Animated counter for statistics
+    function animateCounter(id, target, duration) {
+        const element = document.getElementById(id);
+        let start = 0;
+        const increment = Math.ceil(target / (duration / 16));
+        
+        const timer = setInterval(() => {
+            start += increment;
+            if (start > target) {
+                start = target;
+                clearInterval(timer);
+            }
+            element.textContent = start.toLocaleString();
+        }, 16);
+    }
+    
+    // Observe elements for intersection
+    const observerOptions = {
+        threshold: 0.1
+    };
+    
+    // Create intersection observer for counters
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start counter animations
+                animateCounter('counter-vulnerabilities', 15782, 2000);
+                animateCounter('counter-users', 8457, 2000);
+                
+                // Unobserve after animation starts
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe the stats section
+    const statsSection = document.querySelector('.hero-stats');
+    if (statsSection) {
+        counterObserver.observe(statsSection);
+    }
+    
+    // Create intersection observer for features
+    const featureObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                
+                // Unobserve after animation
+                featureObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Apply animations to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        // Set delay based on index
+        card.style.transitionDelay = `${index * 0.1}s`;
+        featureObserver.observe(card);
+    });
+    
+    // Parallax effect for hero section
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const heroPattern = document.querySelector('.hero-pattern');
+        
+        if (heroPattern) {
+            heroPattern.style.transform = `translateY(${scrollPosition * 0.2
